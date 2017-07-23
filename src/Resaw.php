@@ -195,7 +195,7 @@ class Resaw
 	/**
 	 * Exported file path
 	 *
-	 * @var mixed
+	 * @var string
 	 */
 	public $exportedPath;
 	
