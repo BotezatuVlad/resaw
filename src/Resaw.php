@@ -195,7 +195,7 @@ class Resaw
 	/**
 	 * Exported file path
 	 *
-	 * @var mixed
+	 * @var string
 	 */
 	public $exportedPath;
 	
@@ -233,7 +233,7 @@ class Resaw
 	 * It can be a string or an array o strings, each line will be put on it's own.
 	 * It also can be the path to an image
 	 *
-	 * @var mixed {[] | string}
+	 * @var array|string
 	 */
 	public $watermark;
 	
@@ -270,7 +270,7 @@ class Resaw
 	/**
 	 * Store a boolean value about an gif image beeing animated
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	public $watermarkType = null;
 	
@@ -302,6 +302,34 @@ class Resaw
 	#	protected properties
 	#----------------------------------------
 	/**
+	 * The list of accepted mime type
+	 *
+	 * @var []
+	 */
+	protected $_acceptedMimeTypes = [
+		'image/gd',
+		'image/gd2',
+		'image/base64',
+		'image/png',
+		'application/png',
+		'application/x-png',
+		'image/vnd.wap.wbmp',
+		'image/webp',
+		'image/x-xpixmap',
+		'image/xpm',
+		'image/x-xpm',
+		'image/xbm',
+		'image/jpeg',
+		'image/jpg',
+		'image/jp_',
+		'application/jpg',
+		'application/x-jpg',
+		'image/pjpeg',
+		'image/pipeg',
+		'image/vnd.swiftview-jpeg',
+	];
+	
+	/**
 	 * Default character metrics
 	 *
 	 * @var []
@@ -313,6 +341,13 @@ class Resaw
 		4 => ['height' => 12, 'width' => 7.2],
 		5 => ['height' => 15, 'width' => 9],
 	];
+	
+	/**
+	 * Stores default properties values for this class
+	 *
+	 * @var []
+	 */
+	protected $_defaultValues = [];
 	
 	/**
 	 * Stores final file ratio
@@ -369,45 +404,6 @@ class Resaw
 	 * @var mixed
 	 */
 	protected $_watermarkSource;
-	
-	
-	#----------------------------------------
-	#	protected properties
-	#----------------------------------------
-	/**
-	 * The list of accepted mime type
-	 *
-	 * @var []
-	 */
-	protected $_acceptedMimeTypes = [
-		'image/gd',
-		'image/gd2',
-		'image/base64',
-		'image/png',
-		'application/png',
-		'application/x-png',
-		'image/vnd.wap.wbmp',
-		'image/webp',
-		'image/x-xpixmap',
-		'image/xpm',
-		'image/x-xpm',
-		'image/xbm',
-		'image/jpeg',
-		'image/jpg',
-		'image/jp_',
-		'application/jpg',
-		'application/x-jpg',
-		'image/pjpeg',
-		'image/pipeg',
-		'image/vnd.swiftview-jpeg',
-	];
-	
-	/**
-	 * Stores default properties values for this class
-	 *
-	 * @var []
-	 */
-	protected $_defaultValues = [];
 	
 	
 	#-----------------------------------------
